@@ -11,9 +11,8 @@ fn main() {
     loop {
         let result = calculate_fibonacci(count);
         if result < UPPER_LIMIT {
-            if &result % 2 == 0 {
-                println!("{}", result);
-                sum += &result;
+            if result % 2 == 0 {
+                sum += result;
             }
             count += 1;
             continue;
@@ -23,13 +22,13 @@ fn main() {
     }
     let end = start.elapsed();
     println!("sum: {}", sum);
-    println!("Execution time: {}", end.as_nanos());
+    println!("Execution time: {}", end.as_millis());
 }
 
 fn calculate_fibonacci(input: i32) -> i32 {
     match input {
         1 => 1,
         2 => 2,
-        _ => calculate_fibonacci(&input - 1) + calculate_fibonacci(&input - 2),
+        _ => calculate_fibonacci(input - 1) + calculate_fibonacci(input - 2),
     }
 }
