@@ -1,4 +1,4 @@
 .idea/
 .fleet/
-./*/target
-./*/debug
+/*/target
+/*/debug
